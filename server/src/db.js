@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = 'mongodb://127.0.0.1:27017/chat-app';
+const mongoURI = 'mongodb+srv://fayzanrj:a4b65595@cluster0.1ln5rc1.mongodb.net/?retryWrites=true&w=majority';
 
 const connectToMongo = ()=>{
     mongoose.connect(mongoURI).then(()=>{
