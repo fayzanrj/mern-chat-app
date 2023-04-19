@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "nodemon": "nodemon src/index.js",
-    "build" : "npm install i nodemon mongoose bcryptjs dotenv express jsonwebtoken cors",
+    "build" : "npm install i nodemon mongoose bcryptjs dotenv ",
   },
   "author": "",
   "license": "ISC",
