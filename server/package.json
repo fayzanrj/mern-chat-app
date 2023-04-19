@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "nodemon": "nodemon src/index.js"
+    "nodemon": "nodemon src/index.js",
     "build" : "npm intsall i nodemon mongoose bcryptjs dotenv express socket.io jsonwebtoken cors",
   },
   "author": "",
