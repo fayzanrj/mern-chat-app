@@ -1,11 +1,13 @@
 {
-  "name": "chat-app",
+  "name": "chat-app-backend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "nodemon": "nodemon src/index.js",
-    "build" : "npm install i nodemon mongoose bcryptjs dotenv ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "nodemon index.js",
+    "build" : "npm install i nodemon mongoose bcryptjs dotenv express socket.io jsonwebtoken cors",
+    "start" : "npm start"
   },
   "author": "",
   "license": "ISC",
