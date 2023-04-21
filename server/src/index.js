@@ -24,29 +24,22 @@ const server = app.listen(port, () => {
 
 const io = require('socket.io')(server, { cors: { origin: "*" } });
 
+i
 io.on('connection', (socket) => {
     console.log('connected to socket.io')
-    
-    socket.on('setup', (userData) => {
-        socket.join(userData._id)
-        socket.emit('connected');
-    })
 
     socket.on('join-chat', (room) => {
         socket.join(room);
         console.log("user joined : " + room)
     })
 
-    socket.on("send-message",(newMessageRecieved , chatDetails) => {
-        var chat = newMessageRecieved.chat;
-
-        if (!chat.users) {
-            return console.log("chat not found")
-        }
-            socket.in(chatDetails._id).emit('message-received', newMessageRecieved)
+    socket.on('leave-chat' , (room)=>{
+        socket.leave(room)
+        console.log('user left : '+room)
     })
-    socket.off("setup", () => {
-        console.log("USER DISCONNECTED");
-        socket.leave(userData._id);
-      });
+
+    socket.on('send-msg' , (Message , chatId)=>{
+        console.log("sent : " + Message.content + chatId )
+        socket.in(chatId).emit('recieved-msg', Message)
+    })
 })
